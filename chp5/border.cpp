@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include<iostream>
+#include"split.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ string::size_type width(const vector<string>& v) {
 	return maxlen;
 }
 
-vector<string>	frame(const vector<string>& v) {
+vector<string>frame(const vector<string>& v) {
 	vector<string> ret;
 	string::size_type maxlen = width(v);
 	string border(maxlen + 4, '*');
@@ -29,7 +30,7 @@ vector<string>	frame(const vector<string>& v) {
 
 	for (vector<string>::size_type i = 0;
 		i != v.size(); i++) {
-		ret.push_back("*" + v[i] + string(maxlen = v[i].size(), ' ') + " *");
+		ret.push_back("*" + v[i] + string(maxlen = v[i].size(), ' ') + "*");
 	}
 
 	//하단 테두리를 추가
@@ -39,7 +40,7 @@ vector<string>	frame(const vector<string>& v) {
 }
 
 // 수평 결합 
-vector <string> vcat(const vector <string>& top,
+vector<string>vcat(const vector<string>& top,
 	const vector<string>& bottom) {
 	//위쪽 문자 그림을 복사
 	vector<string> ret = top;
@@ -54,7 +55,7 @@ vector <string> vcat(const vector <string>& top,
 
 //수평 결합
 
-vector <string> hcat(const vector <string>& left,
+vector<string>hcat(const vector <string>& left,
 	const vector<string>& right) {
 	
 	vector<string> ret;
@@ -76,7 +77,7 @@ vector <string> hcat(const vector <string>& left,
 			s = left[i++];
 		}
 		//공백을 포함하여 문자열을 적절한 너비까지 채움
-		s += string(width 1 = s.size(), ' ');
+		s += string(width1 = s.size(), ' ');
 
 		if (j != right.size()) {
 			s += right[j++];
@@ -97,7 +98,7 @@ vector <string> hcat(const vector <string>& left,
 */
 
 
-int main() {
+/*int main() {
 	string s;
 
 	while (getline(cin, s)) {
@@ -107,3 +108,4 @@ int main() {
 	return 0;
 
 }
+*/
